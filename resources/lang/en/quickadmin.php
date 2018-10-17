@@ -1,11 +1,72 @@
 <?php
 
 return [
-		'user-management' => [		'title' => 'User management',		'fields' => [		],	],
-		'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',		],	],
-		'users' => [		'title' => 'Users',		'fields' => [			'name' => 'Name',			'email' => 'Email',			'password' => 'Password',			'role' => 'Role',			'remember-token' => 'Remember token',		],	],
-		'parcel' => [		'title' => 'Parcel',		'fields' => [			'state' => 'State',			'height' => 'Height',			'width' => 'Width',			'length' => 'Length',			'weight' => 'Weight',			'delivery-type' => 'Delivery type',			'cost' => 'Cost',			'location' => 'Current location',			'origin' => 'Origin',			'destination' => 'Destination',			'insurance' => 'Insurance',			'priority' => 'Priority',			'delivery-time' => 'Approximate delivery time',		],	],
-		'parcels-history' => [		'title' => 'Parcels history',		'fields' => [			'enter-time' => 'Enter time',			'leave-time' => 'Leave time',			'parcel' => 'Parcel',			'location' => 'Location',		],	],
+	
+	'user-management' => [
+		'title' => 'User management',
+		'fields' => [
+		],
+	],
+	
+	'roles' => [
+		'title' => 'Roles',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+	
+	'users' => [
+		'title' => 'Users',
+		'fields' => [
+			'name' => 'Name',
+			'email' => 'Email',
+			'password' => 'Password',
+			'role' => 'Role',
+			'remember-token' => 'Remember token',
+		],
+	],
+	
+	'parcel' => [
+		'title' => 'Parcel',
+		'fields' => [
+			'state' => 'State',
+			'height' => 'Height',
+			'width' => 'Width',
+			'length' => 'Length',
+			'weight' => 'Weight',
+			'delivery-type' => 'Delivery type',
+			'cost' => 'Cost',
+			'location' => 'Current location',
+			'origin' => 'Origin',
+			'destination' => 'Destination',
+			'insurance' => 'Insurance',
+			'priority' => 'Priority',
+			'delivery-time' => 'Approximate delivery time',
+		],
+	],
+	
+	'parcels-history' => [
+		'title' => 'Parcels history',
+		'fields' => [
+			'enter-time' => 'Enter time',
+			'leave-time' => 'Leave time',
+			'parcel' => 'Parcel',
+			'location' => 'Location',
+		],
+	],
+
+    'truck' => [
+        'title' => 'Truck',
+        'fields' => [
+            'state' => 'State',
+            'car_model' => 'Car model',
+            'driver_name' => 'Driver name',
+            'location' => 'Current location',
+            'latitude' => 'Latitude',
+            'longitude' => 'Longitude',
+        ],
+    ],
+
 	'qa_create' => 'Create',
 	'qa_save' => 'Save',
 	'qa_edit' => 'Edit',

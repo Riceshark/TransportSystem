@@ -32,7 +32,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('parcels_histories_restore/{id}', ['uses' => 'Admin\ParcelsHistoriesController@restore', 'as' => 'parcels_histories.restore']);
     Route::delete('parcels_histories_perma_del/{id}', ['uses' => 'Admin\ParcelsHistoriesController@perma_del', 'as' => 'parcels_histories.perma_del']);
 
+    Route::resource('trucks', 'Admin\TrucksController');
+    Route::post('trucks_mass_destroy', ['uses' => 'Admin\TrucksController@massDestroy', 'as' => 'trucks.mass_destroy']);
+    Route::post('trucks_restore/{id}', ['uses' => 'Admin\TrucksController@restore', 'as' => 'trucks.restore']);
+    Route::delete('trucks_perma_del/{id}', ['uses' => 'Admin\TrucksController@perma_del', 'as' => 'trucks.perma_del']);
 
 
- 
+
 });
