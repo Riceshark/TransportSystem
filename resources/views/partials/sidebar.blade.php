@@ -42,6 +42,14 @@
                     
                 </ul>
             </li>@endcan
+
+            @can('budget_access')
+                <li>
+                    <a href="{{ route('admin.budgets.index') }}">
+                        <i class="fa fa-money"></i>
+                        <span>Incomes and expenses</span>
+                    </a>
+                </li>@endcan
             
             @can('parcel_access')
             <li>

@@ -33,6 +33,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::delete('parcels_histories_perma_del/{id}', ['uses' => 'Admin\ParcelsHistoriesController@perma_del', 'as' => 'parcels_histories.perma_del']);
 
 
-
+    Route::resource('budgets', 'Admin\BudgetController');
+    Route::post('budgets_mass_destroy', ['uses' => 'Admin\BudgetController@massDestroy', 'as' => 'budgets.mass_destroy']);
  
 });

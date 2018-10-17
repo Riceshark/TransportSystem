@@ -103,5 +103,22 @@ class AuthServiceProvider extends ServiceProvider
             return in_array($user->role_id, [1, 3]);
         });
 
+        // Auth gates for: Users
+        Gate::define('budget_access', function ($user) {
+            return in_array($user->role_id, [1]);
+        });
+        Gate::define('budget_create', function ($user) {
+            return in_array($user->role_id, [1]);
+        });
+        Gate::define('budget_edit', function ($user) {
+            return in_array($user->role_id, [1]);
+        });
+        Gate::define('budget_view', function ($user) {
+            return in_array($user->role_id, [1]);
+        });
+        Gate::define('budget_delete', function ($user) {
+            return in_array($user->role_id, [1]);
+        });
+
     }
 }

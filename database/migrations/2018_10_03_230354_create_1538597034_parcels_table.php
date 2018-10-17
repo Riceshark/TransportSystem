@@ -22,15 +22,19 @@ class Create1538597034ParcelsTable extends Migration
                 $table->double('weight', 4, 2)->nullable();
                 $table->string('delivery_type')->nullable();
                 $table->double('cost', 4, 2)->nullable();
+
                 $table->string('location_address')->nullable();
                 $table->double('location_latitude')->nullable();
                 $table->double('location_longitude')->nullable();
+
                 $table->string('origin_address')->nullable();
                 $table->double('origin_latitude')->nullable();
                 $table->double('origin_longitude')->nullable();
+
                 $table->string('destination_address')->nullable();
                 $table->double('destination_latitude')->nullable();
                 $table->double('destination_longitude')->nullable();
+
                 $table->tinyInteger('insurance')->nullable()->default('0');
                 $table->integer('priority')->nullable();
                 $table->datetime('delivery_time')->nullable();
