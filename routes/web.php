@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('trucks_restore/{id}', ['uses' => 'Admin\TrucksController@restore', 'as' => 'trucks.restore']);
     Route::delete('trucks_perma_del/{id}', ['uses' => 'Admin\TrucksController@perma_del', 'as' => 'trucks.perma_del']);
 
-
-
+    Route::resource('budgets', 'Admin\BudgetController');
+    Route::post('budgets_mass_destroy', ['uses' => 'Admin\BudgetController@massDestroy', 'as' => 'budgets.mass_destroy']);
+ 
 });

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Budget;
+use App\Parcel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $incomes = Budget::groupBy(DB::raw('CAST(date AS DATE)'))->where('value', '>', 0)->get();
+        $expenses = Budget::groupBy(DB::raw('CAST(date AS DATE)'))->where('value', '<', 0)->get();
+        $totalMoney = Budget::groupBy(DB::raw('CAST(date AS DATE)'))->selectRaw('sum(value) as value_sum, date')->get();
+
+        $parcels = Parcel::all();
+
+        return view('home', compact('incomes', 'expenses', 'parcels', 'totalMoney'));
     }
 }
