@@ -103,6 +103,22 @@ class AuthServiceProvider extends ServiceProvider
             return in_array($user->role_id, [1, 3]);
         });
 
+        // Auth gates for: Truck
+        Gate::define('truck_access', function ($user) {
+            return in_array($user->role_id, [1, 2, 3, 4]);
+        });
+        Gate::define('truck_create', function ($user) {
+            return in_array($user->role_id, [1, 3]);
+        });
+        Gate::define('truck_edit', function ($user) {
+            return in_array($user->role_id, [1, 3]);
+        });
+        Gate::define('truck_view', function ($user) {
+            return in_array($user->role_id, [1, 2, 3, 4]);
+        });
+        Gate::define('truck_delete', function ($user) {
+            return in_array($user->role_id, [1, 3]);
+
         // Auth gates for: Users
         Gate::define('budget_access', function ($user) {
             return in_array($user->role_id, [1]);
@@ -118,6 +134,7 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('budget_delete', function ($user) {
             return in_array($user->role_id, [1]);
+          
         });
 
     }

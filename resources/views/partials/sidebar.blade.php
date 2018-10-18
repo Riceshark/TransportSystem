@@ -31,7 +31,7 @@
                             <span>@lang('quickadmin.roles.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('user_access')
                     <li>
                         <a href="{{ route('admin.users.index') }}">
@@ -66,13 +66,14 @@
                     <span>@lang('quickadmin.parcels-history.title')</span>
                 </a>
             </li>@endcan
-            
-
-            
-
-            
 
 
+            <li>
+                <a href="{{ route('admin.trucks.index') }}">
+                    <i class="fa fa-archive"></i>
+                    <span>@lang('quickadmin.truck.title')</span>
+                </a>
+            </li>
 
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
                 <a href="{{ route('auth.change_password') }}">
