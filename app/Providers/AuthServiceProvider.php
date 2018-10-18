@@ -29,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
 
         $user = \Auth::user();
 
-        
+
         // Auth gates for: User management
         Gate::define('user_management_access', function ($user) {
             return in_array($user->role_id, [1]);
@@ -118,6 +118,7 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('truck_delete', function ($user) {
             return in_array($user->role_id, [1, 3]);
+        });
 
         // Auth gates for: Users
         Gate::define('budget_access', function ($user) {
@@ -134,7 +135,7 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('budget_delete', function ($user) {
             return in_array($user->role_id, [1]);
-          
+
         });
 
     }
