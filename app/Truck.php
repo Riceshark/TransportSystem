@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $state
  * @property string $car_model
  * @property string $driver_name
+ * @property string $location
  * @property double $latitude
  * @property double $longitude
  */
@@ -18,7 +19,7 @@ class Truck extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['state', 'car_model', 'driver_name', 'latitude', 'longitude'];
+    protected $fillable = ['state', 'car_model', 'driver_name', 'location', 'latitude', 'longitude'];
     protected $hidden = [];
 
 
