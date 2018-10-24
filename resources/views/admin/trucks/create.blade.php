@@ -71,21 +71,21 @@
 
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('destination_address', trans('quickadmin.parcel.fields.location').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('destination_address', old('destination_address'), ['class' => 'form-control map-input', 'id' => 'destination-input', 'required' => '']) !!}
-                    {!! Form::hidden('destination_latitude', 0 , ['id' => 'destination-latitude']) !!}
-                    {!! Form::hidden('destination_longitude', 0 , ['id' => 'destination-longitude']) !!}
+                    {!! Form::label('location', trans('quickadmin.truck.fields.location').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('location', old('location'), ['class' => 'form-control map-input', 'id' => 'location-input', 'required' => '']) !!}
+                    {!! Form::hidden('latitude', 0 , ['id' => 'latitude']) !!}
+                    {!! Form::hidden('longitude', 0 , ['id' => 'longitude']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('destination'))
+                    @if($errors->has('location'))
                         <p class="help-block">
-                            {{ $errors->first('destination') }}
+                            {{ $errors->first('location') }}
                         </p>
                     @endif
                 </div>
             </div>
 
-            <div id="destination-map-container" style="width:100%;height:200px; ">
-                <div style="width: 100%; height: 100%" id="destination-map"></div>
+            <div id="location-map-container" style="width:100%;height:200px; ">
+                <div style="width: 100%; height: 100%" id="location-map"></div>
             </div>
             
         </div>
