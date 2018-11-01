@@ -5,6 +5,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Hash;
+use Laravel\Passport\HasApiTokens;
 
 /**
  * Class User
@@ -18,7 +19,7 @@ use Hash;
 */
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
     protected $fillable = ['name', 'email', 'password', 'remember_token', 'role_id'];
     protected $hidden = ['password', 'remember_token'];
     
