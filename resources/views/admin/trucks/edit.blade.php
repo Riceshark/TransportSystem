@@ -66,29 +66,27 @@
                 </div>
             </div>
 
+            @if(!env('GOOGLE_MAPS_API_KEY'))
+                <b>'GOOGLE_MAPS_API_KEY' is not set in the .env</b>
+            @endif
+
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('latitude', trans('quickadmin.truck.fields.latitude').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('latitude', old('width'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('location', trans('quickadmin.truck.fields.location').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('location', old('truck_location'), ['class' => 'form-control map-input', 'id' => 'location-input', 'required' => '']) !!}
+                    {!! Form::hidden('latitude', $truck->latitude, ['id' => 'location-latitude']) !!}
+                    {!! Form::hidden('longitude', $truck->longitude, ['id' => 'location-longitude']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('latitude'))
+                    @if($errors->has('location'))
                         <p class="help-block">
-                            {{ $errors->first('latitude') }}
+                            {{ $errors->first('location') }}
                         </p>
                     @endif
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('longitude', trans('quickadmin.truck.fields.longitude').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('longitude', old('width'), ['class' => 'form-control', 'placeholder' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('longitude'))
-                        <p class="help-block">
-                            {{ $errors->first('longitude') }}
-                        </p>
-                    @endif
-                </div>
+
+            <div id="location-map-container" style="width:100%;height:200px; ">
+                <div style="width: 100%; height: 100%" id="location-map"></div>
             </div>
 
         </div>

@@ -141,7 +141,7 @@
                 <div class="col-xs-12 form-group">
                     {!! Form::label('location_address', trans('quickadmin.parcel.fields.location').'*', ['class' => 'control-label']) !!}
                     {!! Form::text('location_address', old('location_address'), ['class' => 'form-control map-input', 'id' => 'location-input', 'required' => '']) !!}
-                    {!! Form::hidden('location_latitude', $parcel->location_latitude , ['id' => 'location-latitude']) !!}
+                    {!! Form::hidden('location_latitude', $parcel->location_latitude, ['id' => 'location-latitude']) !!}
                     {!! Form::hidden('location_longitude', $parcel->location_longitude , ['id' => 'location-longitude']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('location'))

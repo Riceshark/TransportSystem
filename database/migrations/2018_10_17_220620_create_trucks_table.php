@@ -18,6 +18,7 @@ class CreateTrucksTable extends Migration
                 $table->string('state')->nullable();
                 $table->string('car_model')->nullable();
                 $table->string('driver_name')->nullable();
+                $table->string('location')->nullable();
                 $table->double('latitude')->nullable();
                 $table->double('longitude')->nullable();
 
