@@ -72,9 +72,9 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('location', trans('quickadmin.truck.fields.location').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('location', old('location'), ['class' => 'form-control map-input', 'id' => 'location-input', 'required' => '']) !!}
-                    {!! Form::hidden('latitude', 0 , ['id' => 'latitude']) !!}
-                    {!! Form::hidden('longitude', 0 , ['id' => 'longitude']) !!}
+                    {!! Form::text('location', old('truck_location'), ['class' => 'form-control map-input', 'id' => 'location-input', 'required' => '']) !!}
+                    {!! Form::hidden('latitude', 0 , ['id' => 'location-latitude']) !!}
+                    {!! Form::hidden('longitude', 0 , ['id' => 'location-longitude']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('location'))
                         <p class="help-block">
