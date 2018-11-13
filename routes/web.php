@@ -39,5 +39,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     Route::resource('budgets', 'Admin\BudgetController');
     Route::post('budgets_mass_destroy', ['uses' => 'Admin\BudgetController@massDestroy', 'as' => 'budgets.mass_destroy']);
- 
+
+    Route::get('notify/index', 'NotificationController@index');
 });
